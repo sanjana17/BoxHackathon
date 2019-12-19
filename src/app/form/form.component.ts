@@ -20,9 +20,10 @@ export class FormComponent implements OnInit {
   }
 
   submitForm(value) {
-    const weatherUrl = 'https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/XscMucFEKPRa88d7VWurfVjvD4jUKHdbcsejVgQZ8US7fax3BeGoYRladKkqrnAq/info.json/' + value.zipcode + '/degrees';
     const url = 'https://openweathermap.org/data/2.5/weather?zip=' + value.zipcode + '&appid=b6907d289e10d714a6e88b30761fae22&id=4999837&units=metric';
     //change the url
+    console.log(value)
+
     this.httpservice.get(url).subscribe(res => {
       console.log(res)
     });
