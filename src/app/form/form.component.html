@@ -1,5 +1,7 @@
 <p>form works!</p>
+<form [formGroup]="myForm">
 <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Filename" aria-label="filename" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" placeholder="Filename" aria-label="filename" formControlName="filename" aria-describedby="basic-addon1">
   </div>
-  <button type="button" class="btn btn-primary">Submit</button>
+  <button type="button" class="btn btn-primary" (click)="submitForm(myForm.value)">Submit</button>
+</form>
